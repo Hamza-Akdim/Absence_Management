@@ -17,7 +17,7 @@ public class EtudiantMapper {
     }
 
     // Mapper un EtudiantDto vers un Etudiant (entité)
-    public static Etudiant mapToEtudiantEntity(EtudiantDto etudiantDto) { 
+    /*public static Etudiant mapToEtudiantEntity(EtudiantDto etudiantDto) {
         return new Etudiant(
                 etudiantDto.getId(),
                 etudiantDto.getFirstName(),
@@ -25,5 +25,5 @@ public class EtudiantMapper {
                 etudiantDto.getLevel(),
                 etudiantDto.getComment()
         );
-    }
+    }*/
 }

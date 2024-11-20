@@ -1,31 +1,35 @@
 package com.demospring.backend.entities;
 
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.Getter;
 
+import java.util.Collection;
+
 
 @Setter
 @Getter
 @Entity
 @Data
-@AllArgsConstructor 
+@AllArgsConstructor
+@NoArgsConstructor
 public class Etudiant {
 
-    @Id 
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String firstName;
     private String lastName;
     private String level;
     private String comment;
+    @OneToMany(mappedBy = "etudiant")
+    private Collection<Absence> absences;
+
+
+
 //	public Long getId() {
 //		return id;
 //	}
