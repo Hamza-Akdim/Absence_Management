@@ -1,57 +1,65 @@
 package com.demospring.backend.entities;
 
 import jakarta.persistence.Entity;
+import java.util.Collection;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.Getter;
+import jakarta.persistence.*;
 
 
-@Setter
-@Getter
+
+
 @Entity
-@Data
-@AllArgsConstructor 
-public class Etudiant {
 
-    @Id 
+public class Etudiant {
+	
+	@Id 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String firstName;
     private String lastName;
     private String level;
     private String comment;
-//	public Long getId() {
-//		return id;
-//	}
-//	public String getFirstName() {
-//		return firstName;
-//	}
-//	public String getLastName() {
-//		return lastName;
-//	}
-//	public String getLevel() {
-//		return level;
-//	}
-//	public String getComment() {
-//		return comment;
-//	}
-//	
-//    public Etudiant(Long id, String firstName, String lastName, String level, String comment) {
-//        this.id = id;
-//        this.firstName = firstName;
-//        this.lastName = lastName;
-//        this.level = level;
-//        this.comment = comment;
-//    }
-//    public Etudiant() {
-//        
-//    }
+    @OneToMany(mappedBy = "etudiant")
+    private Collection<Absence> absences;
+
+    public Long getId() {
+		return id;
+	}
+	public String getFirstName() {
+		return firstName;
+	}
+	public String getLastName() {
+		return lastName;
+	}
+	public String getLevel() {
+		return level;
+	}
+	public String getComment() {
+		return comment;
+	}
+	public Collection<Absence> getAbsences() {
+		return absences;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+	public void setLevel(String level) {
+		this.level = level;
+	}
+	public void setComment(String comment) {
+		this.comment = comment;
+	}
+	public void setAbsences(Collection<Absence> absences) {
+		this.absences = absences;
+	}
+	
+
 	
 
 }
