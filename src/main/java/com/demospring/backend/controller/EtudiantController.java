@@ -2,6 +2,8 @@ package com.demospring.backend.controller;
 
 import java.util.List;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,8 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.demospring.backend.entities.Etudiant;
 import com.demospring.backend.service.EtudiantService;
-
-
 
 
 @RestController

@@ -1,19 +1,15 @@
 package com.demospring.backend.entities;
 
-import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+
 import java.util.Collection;
 
 import jakarta.persistence.*;
-
-
-
-
 @Entity
-
 public class Etudiant {
-	
-	@Id 
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private Long id;
     private String firstName;
     private String lastName;

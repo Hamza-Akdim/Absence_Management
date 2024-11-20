@@ -34,7 +34,13 @@ public class AbsenceController {
 		        return new ResponseEntity<>(absence, HttpStatus.CREATED);  // Retourne l'absence créée
 		    }
 		    
-//PUT http://localhost:8080/api/absences/1		    
+//PUT http://localhost:8080/api/absences/1		
+		    
+//		    {
+//		        "date": "2024-11-20T10:30:00.000+00:00",
+//		        "heure": "10:30",
+//		        "motif": "Absent pour rendez-vous médical"
+//		    }
 		    @PutMapping("/{id}")
 		    public ResponseEntity<Absence> updateAbsence(@PathVariable Long id, @RequestBody Absence absenceDetails) {
 		        // Appeler la méthode du service pour mettre à jour l'absence

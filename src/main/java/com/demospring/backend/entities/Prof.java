@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.*;
 import java.util.Collection;
 
+
 @Entity
 
 public class Prof {
@@ -48,5 +49,5 @@ public class Prof {
 		this.absences = absences;
 	}
     
-    
+
 }

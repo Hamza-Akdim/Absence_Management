@@ -1,10 +1,12 @@
 package com.demospring.backend.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.*;
 
 
 import java.util.Date;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.*;
+
 
 @Entity
 public class Absence {
@@ -58,4 +60,5 @@ public class Absence {
 		this.heure = heure;
 	}
     
+
 }
