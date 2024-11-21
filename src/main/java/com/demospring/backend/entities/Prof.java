@@ -11,8 +11,10 @@ public class Prof {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+	@Column(name = "firstName")
     private String firstname;
-    private String lastName;
+	@Column(name = "lastName")
+	private String lastName;
     private String course;
     @OneToMany(mappedBy = "prof")
     private Collection<Absence> absences;

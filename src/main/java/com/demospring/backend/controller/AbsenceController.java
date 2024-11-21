@@ -20,8 +20,8 @@ public class AbsenceController {
     private AbsenceService absenceService;
    
 
-		    @GetMapping
-		    public List<Absence> listAllAbsences() {
+	@GetMapping
+	public List<Absence> listAllAbsences() {
 		        return absenceService.getAllAbsences();
 		    }
 //tester sur postman : POST http://localhost:8080/api/absences/mark?etudiantId=1&profId=2&motif=Absent+pour+maladie
@@ -29,7 +29,7 @@ public class AbsenceController {
 		    @PostMapping("/mark")
 		    public ResponseEntity<Absence> markAbsence(@RequestParam Long etudiantId, 
 		                                               @RequestParam Long profId, 
-		                                               @RequestParam String motif) {
+		                                               @RequestBody String motif) {
 		        Absence absence = absenceService.markAbsence(etudiantId, profId, motif);
 		        return new ResponseEntity<>(absence, HttpStatus.CREATED);  // Retourne l'absence créée
 		    }

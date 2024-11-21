@@ -16,18 +16,19 @@ import com.demospring.backend.service.EtudiantService;
 @RestController
 @RequestMapping("/api/students")
 public class EtudiantController {
-	@Autowired
- private EtudiantService etudiantService;
+
+   @Autowired
+   private EtudiantService etudiantService;
  
 
-//public EtudiantController(EtudiantService etudiantService) {
-//   this.etudiantService = etudiantService;
-//}
+  //public EtudiantController(EtudiantService etudiantService) {
+  //   this.etudiantService = etudiantService;
+  //}
 
- //list all students
- @GetMapping
- public List<Etudiant> getAllEtudiants() {
-     return etudiantService.getAllStudents();
- }
- 
+   //list all students
+   @GetMapping
+   public List<Etudiant> getAllEtudiants() {
+       return etudiantService.getAllStudents();
+   }
+
 }
